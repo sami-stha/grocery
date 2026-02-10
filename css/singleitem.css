@@ -1,0 +1,180 @@
+.single-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fffbfc;
+  border-radius: 12px;
+  border-left: 4px solid #596c91;
+  box-shadow: 0 3px 10px rgba(255, 182, 193, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.single-item:hover {
+  background: #fff9fa;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.15);
+}
+
+.single-item p {
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #04094f;
+  flex-grow: 1;
+  margin-left: 12px;
+  letter-spacing: 0.3px;
+}
+
+.single-item.completed p {
+  color: #789ec4;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.single-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 2px solid   #596c91;
+;
+  appearance: none;
+  background: #fff;
+  position: relative;
+}
+
+.single-item input[type="checkbox"]:checked {
+  background: #9ec0ff;
+  border-color: #6086f8;
+}
+
+.single-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.single-item .btn {
+  cursor: pointer;
+  color: rgb(21, 1, 57);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.single-item .btn:first-child {
+  background: linear-gradient(135deg, #d6c2ff, #c4adff);
+  color: #5a4a7a;
+}
+
+.single-item .btn:first-child:hover {
+  background: linear-gradient(135deg, #c4adff, #b399ff);
+  box-shadow: 0 4px 12px rgba(196, 173, 255, 0.3);
+}
+
+.single-item .remove-btn {
+  background: linear-gradient(135deg, #920ede, #6b96f1);
+}
+
+.single-item .remove-btn:hover {
+  background: linear-gradient(135deg, #3d697e, #8aa7e6);
+  box-shadow: 0 4px 12px rgba(61, 81, 93, 0.3);
+}
+
+/* Clear button */
+.clear-btn {
+  background: linear-gradient(135deg, #de9deb, #f489ec);
+  color: #7a6a6a;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 194, 161, 0.2);
+}
+
+.clear-btn:hover {
+  background: linear-gradient(135deg, #d26fe8, #e458f0);
+  color: #6a5a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(134, 111, 140, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+  
+  .section-center {
+    margin-top: 40px;
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+  
+  .form-control {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+  
+  .form-input,
+  .form-control .btn {
+    border-radius: 10px !important;
+    padding: 0.875rem 1rem;
+  }
+  
+  .single-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+  }
+  
+  .single-item .button-container {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+  
+  .single-item .btn {
+    flex: 1;
+  }
+  
+  form h2 {
+    font-size: 24px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.single-item {
+  animation: fadeIn 0.4s ease-out;
+}

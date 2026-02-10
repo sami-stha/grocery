@@ -1,9 +1,10 @@
-function createItems(items) {
-  var $items = $('<div class="items"></div>');
+function createItems(itemsArray) {
+  var $container = $('<div class="items"></div>');
 
-  items.forEach(function (item) {
-    $items.append(createSingleItem(item));
+  $.each(itemsArray, function (index, item) {
+    var $itemElement = createSingleItem(item);
+    $container.append($itemElement);
   });
 
-  return $items;
+  return $container;
 }
